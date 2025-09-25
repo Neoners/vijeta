@@ -1,79 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>VIJETA — Home</title>
-  <style>
-    :root{--bg:#f7fafc;--card:#fff;--ink:#111827;--muted:#6b7280;--accent:#2563eb;--line:#e5e7eb}
-    *{box-sizing:border-box}html,body{margin:0;padding:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Arial}
-    body{background:var(--bg);color:var(--ink)}
-    .container{max-width:1080px;margin:0 auto;padding:20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-    .nav .brand{font-weight:900;text-decoration:none;color:var(--ink)}
-    .nav .links{display:flex;gap:16px;flex-wrap:wrap}
-    .nav a{color:var(--accent);text-decoration:none;font-weight:600}
-    .hero{padding:24px 20px;background:linear-gradient(180deg,#fff,#f6fbff);border:1px solid var(--line);border-radius:16px;margin-bottom:16px}
-    .hero h1{margin:0 0 8px;font-size:32px}
-    .sub{color:var(--muted)}
-    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);color:#fff;background:var(--accent);text-decoration:none;font-weight:700}
-    .btn.alt{background:#fff;color:var(--accent)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .kv{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .chip{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#fff}
-    .chip.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}
-    .chip.danger{background:#fef2f2;border-color:#ef4444;color:#991b1b}
-    .footer{margin:26px 0 6px;color:var(--muted);font-size:14px}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vijeta – Sports Talent Assessment</title>
+<meta name="description" content="Vijeta — AI-powered sports talent assessment. Athlete portal and SAI officials dashboard. Developed by Team Neon.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{govnavy:"#0A1A3B",govink:"#0E2248",govorange:"#FF6A00"}}}};</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0E2248,#0A1A3B)}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.28;background:url('https://thejuniorage.com/wp-content/uploads/2024/08/TJA-Featured-Image-3.jpg') center/cover}
+</style>
 </head>
-<body>
-  <div class="container">
-    <nav class="nav">
-      <a class="brand" href="./">VIJETA</a>
-      <div class="links">
-        <a href="./">Home</a>
-        <a href="./athlete/">Athlete</a>
-        <a href="./official/">Officials</a>
-      </div>
-    </nav>
+<body class="bg-govnavy text-white">
+  <main class="min-h-screen grid place-items-center px-6">
+    <section class="hero w-full max-w-5xl rounded-3xl shadow-2xl">
+      <div class="relative p-10 md:p-14">
+        <div class="flex items-center justify-between gap-3">
+          <h1 class="text-4xl md:text-6xl font-extrabold tracking-widest">VIJETA</h1>
+          <span class="text-xs md:text-sm opacity-80">Developed by <b>Team Neon</b></span>
+        </div>
+        <p class="mt-3 text-lg md:text-2xl opacity-95">AI-powered mobile platform for democratizing sports talent assessment.</p>
 
-    <section class="hero">
-      <h1>Standardized Fitness Tests, Anywhere</h1>
-      <p class="sub">Phone records → On-device AI scores → Officials review only flagged attempts.</p>
-      <div class="btnrow">
-        <a class="btn" href="./athlete/">Start as Athlete</a>
-        <a class="btn alt" href="./official/">Open Officials’ Dashboard</a>
-      </div>
-    </section>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <a href="./athlete/" class="rounded-xl px-5 py-4 bg-govorange text-white font-bold text-center shadow hover:opacity-95">Athlete Portal</a>
+          <a href="./officials/" class="rounded-xl px-5 py-4 bg-white/10 border border-white/20 font-bold text-white text-center hover:bg-white/15">SAI Officials Portal</a>
+        </div>
 
-    <section class="grid">
-      <div class="card">
-        <h3>Available Tests</h3>
-        <ul>
-          <li>Vertical Jump</li>
-          <li>Sit-ups (60s)</li>
-          <li>Shuttle Run</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Status</h3>
-        <div class="kv">
-          <div>Registered Athletes: <strong>128</strong></div>
-          <div>Flagged Attempts: <span class="chip danger">7</span></div>
-          <div>Benchmark Coverage: <strong>U14–U19</strong></div>
-          <div>Sync: <span class="chip ok">Online</span></div>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          <div class="bg-white/10 rounded-lg p-3">Edge AI • Offline</div>
+          <div class="bg-white/10 rounded-lg p-3">Cheat Detection</div>
+          <div class="bg-white/10 rounded-lg p-3">Secure by Design</div>
+          <div class="bg-white/10 rounded-lg p-3">Gov Cloud Ready</div>
         </div>
       </div>
-      <div class="card">
-        <h3>Privacy & Bandwidth</h3>
-        <p>Works offline for recording & scoring. Uploads results; video only if flagged or athlete opts-in.</p>
-      </div>
     </section>
-
-    <footer class="footer">© 2025 VIJETA</footer>
-  </div>
+  </main>
 </body>
 </html>
