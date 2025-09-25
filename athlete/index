@@ -2,55 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>VIJETA — Athlete</title>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Athlete — VIJETA</title>
+  <style>
+    :root{--bg:#f7fafc;--card:#fff;--ink:#111827;--muted:#6b7280;--accent:#2563eb;--line:#e5e7eb}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Arial}
+    body{background:var(--bg);color:var(--ink)}
+    .container{max-width:1080px;margin:0 auto;padding:20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .nav .brand{font-weight:900;text-decoration:none;color:var(--ink)}
+    .nav .links{display:flex;gap:16px;flex-wrap:wrap}
+    .nav a{color:var(--accent);text-decoration:none;font-weight:600}
+    .nav a.active{text-decoration:underline}
+    .hero{padding:24px 20px;background:linear-gradient(180deg,#fff,#f6fbff);border:1px solid var(--line);border-radius:16px;margin-bottom:16px}
+    .hero h1{margin:0 0 8px;font-size:32px}
+    .sub{color:var(--muted)}
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);color:#fff;background:var(--accent);text-decoration:none;font-weight:700}
+    .btn.alt{background:#fff;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .footer{margin:26px 0 6px;color:var(--muted);font-size:14px}
+  </style>
 </head>
 <body>
   <div class="container">
-    <div class="nav">
-      <div class="brand">VIJETA</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="athlete.html">Athlete</a>
-        <a href="officials.html">Officials</a>
-        <a href="leaderboard.html">Leaderboard</a>
-        <a href="resources.html">Resources</a>
+    <nav class="nav">
+      <a class="brand" href="../">VIJETA</a>
+      <div class="links">
+        <a href="../">Home</a>
+        <a class="active" href="../athlete/">Athlete</a>
+        <a href="../official/">Officials</a>
       </div>
-      <div>
-        <span class="badge">EN</span>
-        <span class="badge">KYC: Verified</span>
-      </div>
-    </div>
+    </nav>
 
-    <div class="card">
-      <h2 style="margin-top:0">Select Region & Test</h2>
-      <div class="filters">
-        <div class="select"><span>State</span>
-          <select id="state"></select>
-        </div>
-        <div class="select"><span>District</span>
-          <select id="district"><option>All Districts</option></select>
-        </div>
-        <div class="select"><span>Gender</span>
-          <select id="gender">
-            <option>Male</option><option>Female</option><option>Other</option>
-          </select>
-        </div>
+    <section class="hero">
+      <h1>Athlete Portal</h1>
+      <p class="sub">Record a test, get instant score. Works offline; syncs later.</p>
+      <div class="btnrow">
+        <a class="btn" href="#">Start Vertical Jump</a>
+        <a class="btn alt" href="#">Start Sit-ups (60s)</a>
       </div>
-      <div class="searchbar">
-        <input id="search" placeholder="Search athletes by name…"/>
-        <button class="btn">Record New Test</button>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>How it Works</h3>
+        <ol>
+          <li>Phone setup (fit in frame, quick calibration cue)</li>
+          <li>Record (clear prompts; auto start/stop)</li>
+          <li>On-device analysis (score shown instantly)</li>
+          <li>Retake if flagged</li>
+        </ol>
       </div>
-      <div class="path" id="path">Leaderboard — All India • All Districts • All</div>
-      <table class="table">
-        <thead>
-          <tr><th>Rank</th><th>Athlete</th><th>Score</th><th>Percentile</th><th>Flag</th></tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </div>
+      <div class="card">
+        <h3>Your Recent Attempts</h3>
+        <p>No attempts yet.</p>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 VIJETA</footer>
   </div>
-  <script src="assets/app.js"></script>
 </body>
 </html>
