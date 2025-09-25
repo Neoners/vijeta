@@ -1,67 +1,155 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Officials — VIJETA</title>
-  <style>
-    :root{--bg:#f7fafc;--card:#fff;--ink:#111827;--muted:#6b7280;--accent:#2563eb;--line:#e5e7eb}
-    *{box-sizing:border-box}html,body{margin:0;padding:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Arial}
-    body{background:var(--bg);color:var(--ink)}
-    .container{max-width:1080px;margin:0 auto;padding:20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-    .nav .brand{font-weight:900;text-decoration:none;color:var(--ink)}
-    .nav .links{display:flex;gap:16px;flex-wrap:wrap}
-    .nav a{color:var(--accent);text-decoration:none;font-weight:600}
-    .nav a.active{text-decoration:underline}
-    .hero{padding:24px 20px;background:linear-gradient(180deg,#fff,#f6fbff);border:1px solid var(--line);border-radius:16px;margin-bottom:16px}
-    .hero h1{margin:0 0 8px;font-size:32px}
-    .sub{color:var(--muted)}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:16px}
-    .table{display:grid;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-    .trow{display:grid;grid-template-columns:1.2fr 1fr .7fr .9fr .5fr 1fr}
-    .trow>div{padding:10px;border-bottom:1px solid var(--line)}
-    .trow:last-child>div{border-bottom:none}
-    .thead{background:#f3f4f6;font-weight:700}
-    .footer{margin:26px 0 6px;color:var(--muted);font-size:14px}
-    @media (max-width:700px){
-      .trow{grid-template-columns:1fr 1fr 1fr 1fr .5fr 1fr}
-      .hero h1{font-size:26px}
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vijeta — SAI Officials Portal</title>
+<meta name="description" content="Monitor submissions, review flags, export insights. Developed by Team Neon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  :root{--navy:#0A1A3B;--ink:#0E2248;--accent:#FF6A00}
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--navy);color:#fff}
+  header{position:sticky;top:0;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);padding:12px 16px}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px 16px}
+  .hero{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(135deg,var(--ink),var(--navy));box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.25;background:url('https://thejuniorage.com/wp-content/uploads/2024/08/TJA-Featured-Image-3.jpg') center/cover}
+  .hero > div{position:relative;padding:28px}
+  .grid{display:grid;gap:16px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:#fff;color:#111;border-radius:14px;padding:16px}
+  .muted{color:#64748b;font-size:12px}
+  .filters select,.filters input{background:#f1f5f9;border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px}
+  .btn{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:700}
+  table{width:100%;border-collapse:separate;border-spacing:0 8px}
+  th,td{text-align:left;padding:10px 12px}
+  tbody tr{background:#fff;color:#111}
+  tbody tr td:first-child{border-radius:10px 0 0 10px}
+  tbody tr td:last-child{border-radius:0 10px 10px 0}
+  footer{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding:18px 0;color:#cbd5e1;font-size:14px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .logo{font-weight:800;letter-spacing:.12em}
+  .login{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:10px;color:#fff}
+</style>
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
-      <a class="brand" href="../">VIJETA</a>
-      <div class="links">
-        <a href="../">Home</a>
-        <a href="../athlete/">Athlete</a>
-        <a class="active" href="../official/">Officials</a>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <h1>Officials’ Dashboard</h1>
-      <p class="sub">Ranked list with <strong>Score</strong>, <strong>Percentile</strong>, and <strong>Flag</strong>. Review only flagged attempts.</p>
-    </section>
-
-    <section class="card">
-      <h3>Review Queue (demo data)</h3>
-      <div class="table">
-        <div class="trow thead">
-          <div>Athlete</div><div>Test</div><div>Score</div><div>Percentile</div><div>Flag</div><div>Action</div>
-        </div>
-        <div class="trow">
-          <div>ATH12345</div><div>Vertical Jump</div><div>42.7</div><div>92</div><div>⚑</div><div><a href="#">Approve</a> · <a href="#">Retake</a></div>
-        </div>
-        <div class="trow">
-          <div>ATH09876</div><div>Sit-ups (60s)</div><div>54</div><div>78</div><div></div><div><a href="#">Approve</a></div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">© 2025 VIJETA</footer>
+<header>
+  <div class="wrap topbar">
+    <div class="logo">VIJETA — Officials</div>
+    <a class="login" href="#" onclick="toggleLogin();return false;">Login / Logout (demo)</a>
   </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1 style="margin:0 0 6px;font-size:clamp(28px,4vw,44px);letter-spacing:.06em">SAI Officials Portal</h1>
+      <p style="margin:0;opacity:.95;font-size:clamp(14px,2.5vw,20px)">Monitor submissions, review flags, export insights.</p>
+      <div class="grid kpis" style="margin-top:16px">
+        <div class="card"><div class="muted">Total Verified Submissions</div><div style="font-size:30px;font-weight:800">12,584</div></div>
+        <div class="card"><div class="muted">Flags for Review</div><div style="font-size:30px;font-weight:800">312</div></div>
+        <div class="card"><div class="muted">Offline Sync Queue</div><div style="font-size:30px;font-weight:800">1,104</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <div class="muted" style="margin-bottom:8px">Filters</div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <select id="state" onchange="populateDistricts()"></select>
+      <select id="district"></select>
+      <select id="age">
+        <option>All</option><option>U-12</option><option>12–13</option><option>14–15</option><option>16–17</option><option>18+</option>
+      </select>
+      <select id="gender">
+        <option>All</option><option>Male</option><option>Female</option>
+      </select>
+      <input id="q" placeholder="Search athlete / ID"/>
+      <button class="btn" onclick="applyFilters()">Apply</button>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <div style="font-weight:800;margin-bottom:8px">Review Queue (Flags)</div>
+    <div style="overflow:auto">
+      <table>
+        <thead class="muted">
+          <tr><th>Athlete ID</th><th>Test</th><th>Reason</th><th>District</th><th>Age</th><th>Gender</th><th>Action</th></tr>
+        </thead>
+        <tbody id="rows">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="topbar" style="justify-content:space-between">
+      <span>Ministry of Youth Affairs & Sports • Sports Authority of India (SAI)</span>
+      <span>Developed by <strong>Team Neon</strong></span>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // Demo data
+  const STATES = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"];
+  const DISTRICTS = {
+    "Delhi":["New Delhi","Central","North","South","East","West","North East","North West","Shahdara","South East","South West"],
+    "Maharashtra":["Mumbai City","Mumbai Suburban","Pune","Nagpur","Nashik","Thane","Aurangabad","Kolhapur","Satara","Solapur"],
+    "Uttar Pradesh":["Lucknow","Kanpur Nagar","Varanasi","Prayagraj","Gautam Buddha Nagar","Ghaziabad","Agra","Meerut","Bareilly"]
+    // Add full MDDS list later
+  };
+
+  const queue = [
+    {id:"ATH1234",test:"Vertical Jump",reason:"Speed anomaly",district:"New Delhi",age:"14–15",gender:"M"},
+    {id:"ATH7781",test:"Shuttle Run",reason:"Angle wrong",district:"Pune",age:"16–17",gender:"F"},
+    {id:"ATH9910",test:"Sit-ups",reason:"Form fail",district:"Bhubaneswar",age:"12–13",gender:"M"}
+  ];
+
+  // Fill table
+  function renderRows(list){
+    const tb = document.getElementById('rows');
+    tb.innerHTML = list.map(r=>`
+      <tr>
+        <td>${r.id}</td><td>${r.test}</td><td>${r.reason}</td>
+        <td>${r.district}</td><td>${r.age}</td><td>${r.gender}</td>
+        <td><button class="btn" onclick="alert('Open case ${r.id} (demo)')">Open</button></td>
+      </tr>`).join('');
+  }
+
+  // Filters
+  function initStates(){
+    const s=document.getElementById('state');
+    s.innerHTML = STATES.map(x=>`<option>${x}</option>`).join('');
+    s.value = "Delhi";
+    populateDistricts();
+  }
+  function populateDistricts(){
+    const st = document.getElementById('state').value;
+    const d  = document.getElementById('district');
+    const list = DISTRICTS[st] || ["Headquarters"];
+    d.innerHTML = list.map(x=>`<option>${x}</option>`).join('');
+  }
+  function applyFilters(){
+    const st=document.getElementById('state').value;
+    const di=document.getElementById('district').value;
+    const q =document.getElementById('q').value.toLowerCase();
+    const filtered = queue.filter(r =>
+      (!q || (r.id+r.test+r.reason).toLowerCase().includes(q)) &&
+      (!di || r.district===di)
+    );
+    renderRows(filtered);
+  }
+
+  // Demo login toggle (no backend)
+  function toggleLogin(){
+    if(localStorage.getItem('off_authed')){ localStorage.removeItem('off_authed'); alert('Logged out (demo)'); }
+    else { localStorage.setItem('off_authed','1'); alert('Logged in (demo)'); }
+  }
+
+  // Init
+  initStates();
+  renderRows(queue);
+</script>
 </body>
 </html>
