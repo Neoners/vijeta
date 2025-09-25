@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VIJETA — Home</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">VIJETA</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="athlete.html">Athlete</a>
+        <a href="officials.html">Officials</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div>
+        <span class="badge">EN</span>
+        <span class="badge">KYC: Verified</span>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1 style="margin:0 0 6px 0">Standardized Fitness Tests, Anywhere</h1>
+      <p class="small">Phone records → On-device AI scores → Officials review only flagged attempts.</p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="athlete.html">Start as Athlete</a>
+        <a class="btn ghost" href="officials.html">Open Officials’ Dashboard</a>
+      </div>
+      <div class="kpi">
+        <div class="tile"><div class="small">Available Tests</div><div class="num" id="kpi-tests">—</div></div>
+        <div class="tile"><div class="small">Registered Athletes</div><div class="num" id="kpi-athletes">—</div></div>
+        <div class="tile"><div class="small">Flagged Attempts</div><div class="num" id="kpi-flags">—</div></div>
+        <div class="tile"><div class="small">Benchmark Coverage</div><div class="num" id="kpi-percentile">—</div></div>
+      </div>
+      <div class="footer-note">Data syncs when online; video uploads only if flagged or opted-in.</div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">What’s New</h2>
+      <ul>
+        <li>Full State → District coverage (via dataset)</li>
+        <li>Cleaner leaderboard table with flags and search</li>
+        <li>Hindi toggle groundwork</li>
+      </ul>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
