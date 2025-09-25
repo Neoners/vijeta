@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VIJETA — Officials</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">VIJETA</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="athlete.html">Athlete</a>
+        <a href="officials.html">Officials</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div>
+        <span class="badge">EN</span>
+        <span class="badge">KYC: Verified</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Review Queue</h2>
+      <div class="filters">
+        <div class="select"><span>State</span>
+          <select id="state"></select>
+        </div>
+        <div class="select"><span>District</span>
+          <select id="district"><option>All Districts</option></select>
+        </div>
+        <div class="select"><span>Gender</span>
+          <select id="gender">
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="path" id="path">Leaderboard — All India • All Districts • All</div>
+      <table class="table">
+        <thead>
+          <tr><th>Rank</th><th>Athlete</th><th>Score</th><th>Percentile</th><th>Flag</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="footer-note">
+        Tip: Most reviews complete without video. Video is required only on flagged attempts or opt-in uploads.
+      </div>
+    </div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
